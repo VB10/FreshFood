@@ -9,22 +9,40 @@
 import UIKit
 
 class OnBoardViewController: UIViewController {
-
+    @IBOutlet weak var pageView: UICollectionView!
+    
+    let pageUniquekey : String = "cellId"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        pageView.delegate = self
+        pageView.dataSource = self
+        
+        
+        pageView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: pageUniquekey)
         // Do any additional setup after loading the view.
+    }
+}
+
+extension OnBoardViewController : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pageUniquekey, for: indexPath)
+        
+        cell.backgroundColor = .red
+    
+        return cell
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
     }
-    */
-
+    
+  
 }
