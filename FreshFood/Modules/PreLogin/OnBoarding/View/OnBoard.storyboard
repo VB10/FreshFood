@@ -3,8 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oh7-td-A8D">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oh7-td-A8D">
+                                <rect key="frame" x="0.0" y="44" width="414" height="720.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L4N-tc-ddV">
                                     <size key="itemSize" width="128" height="128"/>
@@ -25,38 +25,70 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oYz-bf-TQZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SM7-i7-Svg">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="aBz-lx-sGV" id="JXs-M0-eDS"/>
                                     <outlet property="delegate" destination="aBz-lx-sGV" id="cBo-Hq-0JP"/>
                                 </connections>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="TTV-Ya-2ia">
+                                <rect key="frame" x="0.0" y="684.5" width="414" height="37"/>
+                                <color key="pageIndicatorTintColor" name="greyColorLight"/>
+                                <color key="currentPageIndicatorTintColor" name="greyColor"/>
+                            </pageControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EED-7c-Gtg" userLabel="Bottom View">
+                                <rect key="frame" x="20" y="772.5" width="374" height="89.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZW-UP-FtK">
+                                        <rect key="frame" x="172" y="30.5" width="30" height="28"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <state key="normal" title="SKIP">
+                                            <color key="titleColor" name="textColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="thin"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hZW-UP-FtK" firstAttribute="centerX" secondItem="EED-7c-Gtg" secondAttribute="centerX" id="gL2-rq-c2a"/>
+                                    <constraint firstItem="hZW-UP-FtK" firstAttribute="centerY" secondItem="EED-7c-Gtg" secondAttribute="centerY" id="uao-ti-KnJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ItG-6U-Jr2" firstAttribute="bottom" secondItem="oh7-td-A8D" secondAttribute="bottom" id="MBP-kK-jbc"/>
+                            <constraint firstItem="EED-7c-Gtg" firstAttribute="height" secondItem="6U1-8M-yVi" secondAttribute="height" multiplier="0.1" id="9mO-SN-8r0"/>
+                            <constraint firstItem="ItG-6U-Jr2" firstAttribute="trailing" secondItem="TTV-Ya-2ia" secondAttribute="trailing" id="Ovl-Ot-XDg"/>
                             <constraint firstItem="ItG-6U-Jr2" firstAttribute="trailing" secondItem="oh7-td-A8D" secondAttribute="trailing" id="R91-tI-ubS"/>
+                            <constraint firstItem="EED-7c-Gtg" firstAttribute="leading" secondItem="ItG-6U-Jr2" secondAttribute="leading" constant="20" id="SXf-Bm-UiR"/>
+                            <constraint firstItem="EED-7c-Gtg" firstAttribute="bottom" secondItem="ItG-6U-Jr2" secondAttribute="bottom" id="ZES-27-6qD"/>
+                            <constraint firstItem="ItG-6U-Jr2" firstAttribute="trailing" secondItem="EED-7c-Gtg" secondAttribute="trailing" constant="20" id="ZjK-M3-z0I"/>
+                            <constraint firstItem="TTV-Ya-2ia" firstAttribute="top" secondItem="oh7-td-A8D" secondAttribute="bottom" constant="-80" id="b3p-qA-Kr5"/>
+                            <constraint firstItem="EED-7c-Gtg" firstAttribute="firstBaseline" secondItem="oh7-td-A8D" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="e9B-07-ZTg"/>
                             <constraint firstItem="oh7-td-A8D" firstAttribute="top" secondItem="ItG-6U-Jr2" secondAttribute="top" id="heK-01-Fvl"/>
+                            <constraint firstItem="TTV-Ya-2ia" firstAttribute="leading" secondItem="ItG-6U-Jr2" secondAttribute="leading" id="uqI-uh-pxA"/>
                             <constraint firstItem="oh7-td-A8D" firstAttribute="leading" secondItem="ItG-6U-Jr2" secondAttribute="leading" id="vy4-sc-QVT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ItG-6U-Jr2"/>
                     </view>
                     <connections>
+                        <outlet property="pageControl" destination="TTV-Ya-2ia" id="JIT-p1-M2u"/>
                         <outlet property="pageView" destination="oh7-td-A8D" id="RGw-jP-r2F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p30-s9-s9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1168" y="125"/>
+            <point key="canvasLocation" x="-1168.1159420289855" y="124.55357142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="greyColor">
+            <color red="0.50462561849999998" green="0.58452665810000004" blue="0.6589916348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyColorLight">
+            <color red="0.72556098241575939" green="0.83928338831930516" blue="0.95108792287106592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor">
+            <color red="0.50462561849999998" green="0.58452665810000004" blue="0.6589916348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
