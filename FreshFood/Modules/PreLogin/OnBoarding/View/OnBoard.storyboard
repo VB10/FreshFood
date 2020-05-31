@@ -82,10 +82,10 @@
     </scenes>
     <resources>
         <namedColor name="greyColor">
-            <color red="0.50462561849999998" green="0.58452665810000004" blue="0.6589916348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50499999523162842" green="0.58499997854232788" blue="0.6589999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="greyColorLight">
-            <color red="0.72556098241575939" green="0.83928338831930516" blue="0.95108792287106592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.72600001096725464" green="0.83899998664855957" blue="0.95099997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
             <color red="0.50462561849999998" green="0.58452665810000004" blue="0.6589916348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

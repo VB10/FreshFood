@@ -11,35 +11,32 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var appCordinator: AppCordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        
-       
-            
-            let storyboard = UIStoryboard(name: "OnBoard", bundle: Bundle.main)
-            let firstVC = storyboard.instantiateViewController(withIdentifier: "OnBoardVC") as! OnBoardViewController
-            
-            self.window?.rootViewController = firstVC
-            self.window?.makeKeyAndVisible()
-            
-        let windowScene:UIWindowScene = scene as! UIWindowScene;
-           
-           // Create the UIWindow variable use above UIWindowScene variable.
-           self.window = UIWindow(windowScene: windowScene)
-               
-           // Set this scene's window's background color.
-//           self.window!.backgroundColor = UIColor.red
-           
-           // Create a ViewController object and set it as the scene's window's root view controller.
-           self.window!.rootViewController = firstVC
-           
-           // Make this scene's window be visible.
-           self.window!.makeKeyAndVisible()
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: scene)
+
+        self.window = window
+        self.appCordinator = AppCordinator(window: window)
+        appCordinator?.start()
+
+
+//        let storyboard = UIStoryboard(name: "OnBoard", bundle: Bundle.main)
+//        let firstVC = storyboard.instantiateViewController(withIdentifier: "OnBoardVC") as! OnBoardViewController
+//
+//        self.window?.rootViewController = firstVC
+//        self.window?.makeKeyAndVisible()
+//
+//        let windowScene: UIWindowScene = scene as! UIWindowScene;
+//
+//        self.window = UIWindow(windowScene: windowScene)
+//
+//        self.window!.rootViewController = firstVC
+//
+//        // Make this scene's window be visible.
+//        self.window!.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
