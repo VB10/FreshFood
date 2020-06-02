@@ -10,7 +10,7 @@ import UIKit
 
 protocol Coordinator {
     var childCoordinators: [Coordinator] { get }
-    func start()
+    func start() throws
 }
 
 final class AppCordinator: Coordinator {
@@ -20,15 +20,20 @@ final class AppCordinator: Coordinator {
     init(window: UIWindow) {
         self.window = window
     }
-    func start() {
+
+    func start() throws{
         let navigationController = UINavigationController()
         let onBoardCoordinator = OnBoardCoordinator(navigationController: navigationController)
-        onBoardCoordinator.start()
+        do {
+            try onBoardCoordinator.start()
+        } catch is UIViewControllerError {
+            print("Doesn't start controller")
+        }
+
+
 
         childCoordinators.append(onBoardCoordinator)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
-
-
 }

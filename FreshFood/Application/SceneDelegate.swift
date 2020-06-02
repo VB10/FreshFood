@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.window = window
         self.appCordinator = AppCordinator(window: window)
-        appCordinator?.start()
+        try? appCordinator?.start()
+
 
 
 //        let storyboard = UIStoryboard(name: "OnBoard", bundle: Bundle.main)

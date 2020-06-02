@@ -18,9 +18,18 @@ class OnBoardCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
-    func start() {
-        let onBoardController = OnBoardViewController.instance()
-        navigationController.setViewControllers([onBoardController], animated: false)
-        navigationController.setNavigationBarHidden(true, animated: true)
+    let pageStoryBoard: String = "OnBoard"
+
+
+    func start() throws{
+        do {
+            let onBoardController: OnBoardViewController = try .instantiate(storyBoardName: pageStoryBoard)
+            onBoardController.viewModel = OnBoardViewModel()
+            navigationController.setViewControllers([onBoardController], animated: false)
+            navigationController.setNavigationBarHidden(true, animated: true)
+
+        } catch is UIViewControllerError {
+            print("Not Found")
+        }
     }
 }

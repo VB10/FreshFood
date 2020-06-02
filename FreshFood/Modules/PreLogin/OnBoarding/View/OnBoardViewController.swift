@@ -12,8 +12,12 @@ class OnBoardViewController: UIViewController {
     @IBOutlet weak var pageView: UICollectionView!
 
     @IBOutlet weak var pageControl: UIPageControl!
+
+    var viewModel: OnBoardViewModel!
     let pageUniquekey: String = "OnBoardIdentifier"
     let cellOnBoardName: String = "OnBoardViewCell"
+    var onBoardList: Array<OnBoardModel> = []
+
 
     static func instance() -> OnBoardViewController {
         let pageIdentifier: String = "OnBoardVC"
@@ -25,19 +29,14 @@ class OnBoardViewController: UIViewController {
         return OnBoardViewController()
     }
 
-    var onBoardList: Array<OnBoardModel> = []
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        navigationController?.setNavigationBarHidden(true, animated: true)
-//    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         pageView.delegate = self
         pageView.dataSource = self
-        
-        onBoardList = [OnBoardModel(image: "circle_basket", description: "Quickly search and add healthy foods to your cart"),
-            OnBoardModel(image: "circle_apple", description: "With one click you can add every ingredient for a recipe to your cart"),]
+
+        onBoardList = viewModel.setupListOnBoardData()
         registerNib()
         setupCustomNibView()
 

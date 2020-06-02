@@ -14,6 +14,8 @@
 		5424F464247DEF45009EA108 /* OnBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5424F463247DEF45009EA108 /* OnBoard.storyboard */; };
 		5424F466247DEF74009EA108 /* OnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424F465247DEF74009EA108 /* OnBoardViewController.swift */; };
 		5438AECA248392F5007B7E73 /* AppCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5438AEC9248392F5007B7E73 /* AppCordinator.swift */; };
+		5487C7E02486279F000907EB /* OnBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487C7DF2486279F000907EB /* OnBoardViewModel.swift */; };
+		5487C7E324863375000907EB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487C7E224863375000907EB /* UIViewController+Extension.swift */; };
 		54993622247F4562007FD6DA /* OnBoardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54993620247F4562007FD6DA /* OnBoardViewCell.swift */; };
 		54993623247F4562007FD6DA /* OnBoardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54993621247F4562007FD6DA /* OnBoardViewCell.xib */; };
 		54993625247F60E1007FD6DA /* OnBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54993624247F60E1007FD6DA /* OnBoardModel.swift */; };
@@ -31,6 +33,8 @@
 		5424F463247DEF45009EA108 /* OnBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoard.storyboard; sourceTree = "<group>"; };
 		5424F465247DEF74009EA108 /* OnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
 		5438AEC9248392F5007B7E73 /* AppCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCordinator.swift; sourceTree = "<group>"; };
+		5487C7DF2486279F000907EB /* OnBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewModel.swift; sourceTree = "<group>"; };
+		5487C7E224863375000907EB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		54993620247F4562007FD6DA /* OnBoardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewCell.swift; sourceTree = "<group>"; };
 		54993621247F4562007FD6DA /* OnBoardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardViewCell.xib; sourceTree = "<group>"; };
 		54993624247F60E1007FD6DA /* OnBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardModel.swift; sourceTree = "<group>"; };
@@ -135,8 +139,17 @@
 		54702E78247DD3A30064F6D8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5487C7DF2486279F000907EB /* OnBoardViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5487C7E12486333C000907EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5487C7E224863375000907EB /* UIViewController+Extension.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5499361E247F443D007FD6DA /* Components */ = {
@@ -191,6 +204,7 @@
 		54F9DE35247CBE3C000871B1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5487C7E12486333C000907EB /* View */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,8 +324,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5487C7E324863375000907EB /* UIViewController+Extension.swift in Sources */,
 				5438AECA248392F5007B7E73 /* AppCordinator.swift in Sources */,
 				54993622247F4562007FD6DA /* OnBoardViewCell.swift in Sources */,
+				5487C7E02486279F000907EB /* OnBoardViewModel.swift in Sources */,
 				54AC2E242484032C0033FC1C /* OnBoardCoordinator.swift in Sources */,
 				54159A47247CAE21003E1F21 /* AppDelegate.swift in Sources */,
 				5424F466247DEF74009EA108 /* OnBoardViewController.swift in Sources */,
