@@ -21,7 +21,7 @@ class OnBoardCoordinator: Coordinator {
     let pageStoryBoard: String = "OnBoard"
 
 
-    func start() throws{
+    func start() throws {
         do {
             let onBoardController: OnBoardViewController = try .instantiate(storyBoardName: pageStoryBoard)
             onBoardController.viewModel = OnBoardViewModel()

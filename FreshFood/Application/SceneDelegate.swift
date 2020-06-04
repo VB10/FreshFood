@@ -21,23 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         self.appCordinator = AppCordinator(window: window)
         try? appCordinator?.start()
-
-
-
-//        let storyboard = UIStoryboard(name: "OnBoard", bundle: Bundle.main)
-//        let firstVC = storyboard.instantiateViewController(withIdentifier: "OnBoardVC") as! OnBoardViewController
-//
-//        self.window?.rootViewController = firstVC
-//        self.window?.makeKeyAndVisible()
-//
-//        let windowScene: UIWindowScene = scene as! UIWindowScene;
-//
-//        self.window = UIWindow(windowScene: windowScene)
-//
-//        self.window!.rootViewController = firstVC
-//
-//        // Make this scene's window be visible.
-//        self.window!.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -67,7 +50,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

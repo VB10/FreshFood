@@ -21,9 +21,11 @@
 		54993625247F60E1007FD6DA /* OnBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54993624247F60E1007FD6DA /* OnBoardModel.swift */; };
 		54993627247F7562007FD6DA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54993626247F7562007FD6DA /* Colors.xcassets */; };
 		54AC2E242484032C0033FC1C /* OnBoardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC2E232484032C0033FC1C /* OnBoardCoordinator.swift */; };
+		D9466D3CFA3E6D26D8AAB507 /* Pods_FreshFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDC532CC64865BCC68B5424 /* Pods_FreshFood.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18CE7C7217DB36D178EA9F1B /* Pods-FreshFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshFood.debug.xcconfig"; path = "Target Support Files/Pods-FreshFood/Pods-FreshFood.debug.xcconfig"; sourceTree = "<group>"; };
 		54159A43247CAE21003E1F21 /* FreshFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54159A46247CAE21003E1F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54159A48247CAE21003E1F21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		54993624247F60E1007FD6DA /* OnBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardModel.swift; sourceTree = "<group>"; };
 		54993626247F7562007FD6DA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		54AC2E232484032C0033FC1C /* OnBoardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardCoordinator.swift; sourceTree = "<group>"; };
+		D2AD777A48F5DBF55AC961F6 /* Pods-FreshFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshFood.release.xcconfig"; path = "Target Support Files/Pods-FreshFood/Pods-FreshFood.release.xcconfig"; sourceTree = "<group>"; };
+		DDDC532CC64865BCC68B5424 /* Pods_FreshFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreshFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9466D3CFA3E6D26D8AAB507 /* Pods_FreshFood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,8 @@
 			children = (
 				54159A45247CAE21003E1F21 /* FreshFood */,
 				54159A44247CAE21003E1F21 /* Products */,
+				BEB652B633E0CDEBFCEAED4E /* Pods */,
+				B35C9550FD8C18211C692D1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,6 +258,24 @@
 			path = "Third Party";
 			sourceTree = "<group>";
 		};
+		B35C9550FD8C18211C692D1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDDC532CC64865BCC68B5424 /* Pods_FreshFood.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEB652B633E0CDEBFCEAED4E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18CE7C7217DB36D178EA9F1B /* Pods-FreshFood.debug.xcconfig */,
+				D2AD777A48F5DBF55AC961F6 /* Pods-FreshFood.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,9 +283,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54159A57247CAE23003E1F21 /* Build configuration list for PBXNativeTarget "FreshFood" */;
 			buildPhases = (
+				6F2C0BC0C5E49DA1522A337A /* [CP] Check Pods Manifest.lock */,
 				54159A3F247CAE21003E1F21 /* Sources */,
 				54159A40247CAE21003E1F21 /* Frameworks */,
 				54159A41247CAE21003E1F21 /* Resources */,
+				7B3318B8ADE7EF7C5C749B5A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +345,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F2C0BC0C5E49DA1522A337A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FreshFood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B3318B8ADE7EF7C5C749B5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FreshFood/Pods-FreshFood-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FreshFood/Pods-FreshFood-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FreshFood/Pods-FreshFood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54159A3F247CAE21003E1F21 /* Sources */ = {
@@ -466,6 +535,7 @@
 		};
 		54159A58247CAE23003E1F21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18CE7C7217DB36D178EA9F1B /* Pods-FreshFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -483,6 +553,7 @@
 		};
 		54159A59247CAE23003E1F21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2AD777A48F5DBF55AC961F6 /* Pods-FreshFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

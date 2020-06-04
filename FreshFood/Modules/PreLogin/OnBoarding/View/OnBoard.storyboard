@@ -11,7 +11,7 @@
         <!--On Board View Controller-->
         <scene sceneID="m2K-Se-ead">
             <objects>
-                <viewController storyboardIdentifier="OnBoardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aBz-lx-sGV" customClass="OnBoardViewController" customModule="FreshFood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnBoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aBz-lx-sGV" customClass="OnBoardViewController" customModule="FreshFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6U1-8M-yVi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                 <rect key="frame" x="20" y="772.5" width="374" height="89.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZW-UP-FtK">
-                                        <rect key="frame" x="172" y="30.5" width="30" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="89.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <state key="normal" title="SKIP">
                                             <color key="titleColor" name="textColor"/>
@@ -49,8 +49,10 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="hZW-UP-FtK" firstAttribute="centerX" secondItem="EED-7c-Gtg" secondAttribute="centerX" id="gL2-rq-c2a"/>
-                                    <constraint firstItem="hZW-UP-FtK" firstAttribute="centerY" secondItem="EED-7c-Gtg" secondAttribute="centerY" id="uao-ti-KnJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="hZW-UP-FtK" secondAttribute="bottom" id="RaD-Ca-w1Q"/>
+                                    <constraint firstItem="hZW-UP-FtK" firstAttribute="top" secondItem="EED-7c-Gtg" secondAttribute="top" id="Zfq-cR-oyx"/>
+                                    <constraint firstAttribute="trailing" secondItem="hZW-UP-FtK" secondAttribute="trailing" id="nOM-EJ-FWl"/>
+                                    <constraint firstItem="hZW-UP-FtK" firstAttribute="leading" secondItem="EED-7c-Gtg" secondAttribute="leading" id="rgN-LL-Mub"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -73,9 +75,19 @@
                     <connections>
                         <outlet property="pageControl" destination="TTV-Ya-2ia" id="JIT-p1-M2u"/>
                         <outlet property="pageView" destination="oh7-td-A8D" id="RGw-jP-r2F"/>
+                        <outlet property="skipOrNextButton" destination="hZW-UP-FtK" id="uYk-cI-RwJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p30-s9-s9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="drv-K7-17e">
+                    <rect key="frame" x="0.0" y="0.0" width="374" height="89.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                    <state key="normal" title="SKIP">
+                        <color key="titleColor" name="textColor"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="thin"/>
+                    </state>
+                </button>
             </objects>
             <point key="canvasLocation" x="-1168.1159420289855" y="124.55357142857142"/>
         </scene>

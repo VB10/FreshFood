@@ -7,66 +7,45 @@
 //
 
 import UIKit
+import RxCocoa
 
 class OnBoardViewController: UIViewController {
     @IBOutlet weak var pageView: UICollectionView!
-
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var skipOrNextButton: UIButton!
+
 
     var viewModel: OnBoardViewModel!
     let pageUniquekey: String = "OnBoardIdentifier"
     let cellOnBoardName: String = "OnBoardViewCell"
-    var onBoardList: Array<OnBoardModel> = []
-
-
-    static func instance() -> OnBoardViewController {
-        let pageIdentifier: String = "OnBoardVC"
-        let pageStoryBoard: String = "OnBoard"
-        let storyBoard = UIStoryboard(name: pageStoryBoard, bundle: .main)
-        if let controller = storyBoard.instantiateViewController(identifier: pageIdentifier) as? OnBoardViewController {
-            return controller
-        }
-        return OnBoardViewController()
-    }
-
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         pageView.delegate = self
         pageView.dataSource = self
+        viewModel.setupListOnBoardData()
+        viewModel.setupCustomNibView(pageView: pageView)
+        viewModel.registerNib(pageView: pageView)
+        viewModel.setupReactiveBinding(pageView: pageView, pageControl: pageControl)
+        viewModel.setupButtonReactive(button: skipOrNextButton)
+    }
 
-        onBoardList = viewModel.setupListOnBoardData()
-        registerNib()
-        setupCustomNibView()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        viewModel.collectionViewFrame.onNext(self.pageView.frame)
+    }
 
-    }
-    func registerNib() {
-        let nibCell = UINib(nibName: cellOnBoardName, bundle: nil)
-        pageView.register(nibCell, forCellWithReuseIdentifier: pageUniquekey)
-    }
-    func setupCustomNibView() {
-        pageView.layer.cornerRadius = 20
-        pageView.layer.shadowColor = UIColor.black.cgColor
-        pageView.layer.shadowRadius = 20.0
-        pageView.layer.shadowOpacity = 20
-    }
 }
 
 extension OnBoardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return onBoardList.count
+        return viewModel.onBoardList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let onBoardCell = collectionView.dequeueReusableCell(withReuseIdentifier: pageUniquekey, for: indexPath) as? OnBoardViewCell else { return UICollectionViewCell() }
-        onBoardCell.setup(description: onBoardList[indexPath.row].description, image: UIImage(named: onBoardList[indexPath.row].image), frame: view.frame)
+        onBoardCell.setup(description: viewModel.onBoardList [indexPath.row].description, image: UIImage(named: viewModel.onBoardList[indexPath.row].image), frame: view.frame)
         return onBoardCell
     }
-
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let index = targetContentOffset.pointee.x / view.frame.width
-        pageControl.currentPage = Int(index)
-    }
-
 }
